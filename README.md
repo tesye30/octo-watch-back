@@ -81,6 +81,9 @@ Uma rede social simples que permitirá comentários e avaliações animes/mangá
 * Alguma tecnologia front-end;
 * Validator.
 
+## 6. 🎉 Para rodar o projeto
+⚠ Em construção...
+
 ## 6. 📚 Documentação
 
 ## 7. 😎 Owners
