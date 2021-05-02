@@ -83,13 +83,12 @@ Uma rede social simples que permitirá comentários e avaliações animes/mangá
 * Node;
 * Express;
 * Bcrypt;
-* MySQL ou MongoDB;
+* JWT;
+* MySQL (knex ou sequelize) ou MongoDB (mongoose);
 * Alguma tecnologia front-end;
 * Validator.
 
 ## 6. 📚 Documentação
 
 ## 7. 😎 Owners
-[Gustavo](htpps://www.github.com/GustavoGomesDias)
-
-[Lucas](htpps://www.github.com/tesye30)
+[Gustavo](htpps://www.github.com/GustavoGomesDias) | [Lucas](htpps://www.github.com/tesye30)
