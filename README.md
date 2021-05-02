@@ -21,6 +21,30 @@ Como qualquer outra rede social o objetivo primário é CONECTAR PESSOAS, porém
 Uma rede social simples que permitirá comentários e avaliações animes/mangás/comics/filmes/tudo que tiver na nossa cabeça. Com intenção de conversar e interagir com outras pessoas a respeitos de assuntos diversos sobre esse universo.
 
 ## 2. 🤔 Como contribuir
+### Pull Request
+1. Clone o repositório:
+    ```sh
+    $git clone https://github.com/tesye30/octo-watch.git
+    ```
+
+2. Crie uma branch developer (ou qualquer outro nome):
+    ```sh
+    $git checkout -b developer
+    ```
+
+3. Navegue até a branch:
+    ```sh
+    $git checkout developer
+    ```
+
+4. Faça suas modificações nessa branch e envie elas para que seja analizada:
+    ```sh
+    $git push origin developer
+    ```
+
+5. Abra um [Issue](https://github.com/tesye30/octo-watch/issues) com o link do PR e explique o que foi feitom, assim que nós analisarmos você terá um feedback.
+
+6. Esse repositório é mantido por iniciantes ainda, nós apreciariamos mutio caso você queira nos dar algumas dicas sobre está seção e até sobre o código em si.
 
 ## 3. 📖 Legenda
 - Works = Animes/movies/among others;
@@ -89,7 +113,18 @@ Uma rede social simples que permitirá comentários e avaliações animes/mangá
 * Validator.
 
 ## 6. 🎉 Para rodar o projeto
-⚠ Em construção...
+1. Instale todas es tec's usadas junto do Node JS:
+
+    ```
+    npm install
+    ```
+2. Rode o aplicativo
+
+    ```
+    npm run dev
+    ```
+3. Você precisará de uma ferramente de teste de requisições como o [Postman](https://www.postman.com/) ou [Insomnia](https://insomnia.rest/)
+4. Digite localhost:3000 e siga a minha tentativa de documentação para usar a API.
 
 ## 6. 📚 Documentação
 
