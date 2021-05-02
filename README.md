@@ -2,6 +2,13 @@
 
 ## Faze de construção...
 ## 📕 Sumário
+[1. O que é?](https://github.com/tesye30/octo-watch#1--o-que-%C3%A9)
+[2. Como contribuir](https://github.com/tesye30/octo-watch#2-como-contribuir)
+[3. Legenda](https://github.com/tesye30/octo-watch#3--leganda)
+[4. Implementações](https://github.com/tesye30/octo-watch#4--implementa%C3%A7%C3%B5es)
+[5. Tecnologias](https://github.com/tesye30/octo-watch#5--tecnologias)
+[6. Documentação](https://github.com/tesye30/octo-watch#6--documenta%C3%A7%C3%A3o)
+[7. Owners](https://github.com/tesye30/octo-watch#7--owners)
 
 ## 1. ❓ O que é?
 Como qualquer outra rede social o objetivo primário é CONECTAR PESSOAS, porém dessa vez será por meio de conteudo geek !
@@ -78,4 +85,5 @@ Uma rede social simples que permitirá comentários e avaliações animes/mangá
 
 ## 7. 😎 Owners
 [Gustavo](htpps://www.github.com/GustavoGomesDias)
+
 [Lucas](htpps://www.github.com/tesye30)
