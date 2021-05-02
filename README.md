@@ -42,7 +42,7 @@ Uma rede social simples que permitirá comentários e avaliações animes/mangá
     $git push origin developer
     ```
 
-5. Abra um [Issue](https://github.com/tesye30/octo-watch/issues) com o link do PR e explique o que foi feitom, assim que nós analisarmos você terá um feedback.
+5. Abra um [Issue](https://github.com/tesye30/octo-watch/issues) com o link do PR, verique se não há um label que posso sinalizala melhor e explique o que foi feito, assim que nós analisarmos você terá um feedback.
 
 6. Esse repositório é mantido por iniciantes ainda, nós apreciariamos mutio caso você queira nos dar algumas dicas sobre está seção e até sobre o código em si.
 
