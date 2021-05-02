@@ -91,4 +91,4 @@ Uma rede social simples que permitirá comentários e avaliações animes/mangá
 ## 6. 📚 Documentação
 
 ## 7. 😎 Owners
-[Gustavo](htpps://www.github.com/GustavoGomesDias) | [Lucas](htpps://www.github.com/tesye30)
+[Gustavo](https://github.com/GustavoGomesDias) | [Lucas](https://github.com/tesye30)
