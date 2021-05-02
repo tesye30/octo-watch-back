@@ -9,7 +9,7 @@ Uma rede social simples que permitirá comentários e avaliações animes/mangá
 
 ## 2. Como contribuir
 
-## 3. 📖 Leganda
+## 3. 📖 Legenda
 - Works = Animes/movies/among others;
 
 ## 4. ✅ Implementações
