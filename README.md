@@ -50,7 +50,7 @@ Uma rede social simples que permitirá comentários e avaliações animes/mangá
 - Works = Animes/movies/among others;
 
 ## 4. ✅ Implementações
- - [ ] CRUD User
+- [ ] CRUD User
     - [ ] Find By Id (Admin - GET);
     - [ ] Find By Name (GET);
     - [ ] Create (POST);
@@ -62,29 +62,48 @@ Uma rede social simples que permitirá comentários e avaliações animes/mangá
 - [ ] CRUD Works
     - [ ] Find By Id (Admin - GET);
     - [ ] Find By Name (GET);
+    - [ ] Find By Type (GET);
     - [ ] Create (Admin - POST);
     - [ ] Update/edit (Admin - PUT);
     - [ ] Delete (Admin - Delete).
 
- - [ ] CRUD Coments
+- [ ] CRUD Studios
+    - [ ] Find By Id (Admin - GET);
+    - [ ] Find By Name (GET);
+    - [ ] Create (Admin - POST);
+    - [ ] Update/edit (Admin - PUT);
+    - [ ] Delete (Admin - DELETE).
+
+- [ ] CRUD Episodes
+    - [ ] Find By Id (Admin - GET);
+    - [ ] Create (Admin - POST) ;
+    - [ ] Update/edit (Admin - PUT);
+    - [ ] Delete(Admin - DELETE).
+
+- [ ] CRUD Categories
+    - [ ] Find By Id (Admin - GET);
+    - [ ] Find By Name (GET);
+    - [ ] Create (Admin - POST);
+    - [ ] Update/edit (Admin - PUT);
+    - [ ] Delete (Admin - DELETE).
+
+- [ ] CRUD Comments
+    - [ ] Find Comments By Work Id (GET);
     - [ ] Create (POST);
     - [ ] Update/edit (PUT);
     - [ ] Delete (DELETE).
 
-- [ ] CRUD Reactions 
-
-##### ⚠ OBS: Se for MongoDB, esse CRUD não existe e passa a ser um atributo da entidade Animes/movies/among others
-- [ ] CRUD Categories
-    - [ ] Find By Id (Admin - GET);
-    - [ ] Find By Name (GEt);
-    - [ ] Create (Admin - POST);
-    - [ ] Update/edit (Admin = PUT);
-    - [ ] Delete (Admin - DELETE).
-
-- [ ] CRUD Works_categories
+- [ ] CRUD works_categories
     - [ ] Find Works In Category (GET);
     - [ ] Add Work in Category (Admin - POST);
-    - [ ] Delete Anime in CAtegory (Admin - DELETE).
+    - [ ] Delete Work in Category (Admin - DELETE).
+
+- [ ] CRUD works_studios
+    - [ ] Find Work From A Studio (GET);
+    - [ ] Add Work to Studio (Admin - POST);
+    - [ ] Delete Studio Work (Admin - DELETE).
+
+- [ ] CRUD Reactions
 
 - [ ] Auth
     - [ ] Is Logged;
@@ -96,11 +115,8 @@ Uma rede social simples que permitirá comentários e avaliações animes/mangá
     - [ ] Is URL.
     - [ ] ...
 
-- [ ] DB
-    - [ ] Decidir qual usar;
-    - [ ] ...
-
-
+- [x] DB
+    - MySQL
     
 ## 5. 💻 Tecnologias
 * Jest (TDD);
@@ -108,8 +124,9 @@ Uma rede social simples que permitirá comentários e avaliações animes/mangá
 * Express;
 * Bcrypt;
 * JWT;
-* MySQL (knex ou sequelize) ou MongoDB (mongoose);
-* Alguma tecnologia front-end;
+* MySQL;
+* Knex;
+    * mysql2;
 * Validator.
 
 ## 6. 🎉 Para rodar o projeto
