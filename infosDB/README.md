@@ -3,6 +3,15 @@
 
 Usei o [HeidiSQL](https://www.heidisql.com/) para criar as tabelas.
 
+## Legendas
+p_comme = parent_comment_id (Caso um comentário faça referência a outro);
+type = Tipo do work (anime/filme/série);
+site = Site do estúdi o;
+image = Url de uma imagem;
+ep_id = Id do episódio;
+cat_id = Id da categoria.
+commimg = Id das imagens que pertencem a um comentário.
+
 ## Entidades
 
 #### users
@@ -47,22 +56,26 @@ Usei o [HeidiSQL](https://www.heidisql.com/) para criar as tabelas.
 #### comments
 |Rows      |Type      |Length    |Unsigned  |Allow Null|Zerofill  |Default   |
 |---       |---       |---       |---       |---       |---       |---       |
+|id PK     |INT       |10        |[x]       |[ ]       |[ ]       |0         |
 |comment   |VARCHAR   |150       |[ ]       |[ ]       |[ ]       |'0'       |
-|work_id Fk|INT       |10        |[x]       |[ ]       |[ ]       |0         |
-
-### user_comment
-|Rows      |Type      |Length    |Unsigned  |Allow Null|Zerofill  |Default   |
-|---       |---       |---       |---       |---       |---       |---       |
+|work_id FK|INT       |10        |[x]       |[ ]       |[ ]       |0         |
 |user_id FK|INT       |10        |[x]       |[ ]       |[ ]       |0         |
-|comm_id Fk|INT       |10        |[x]       |[ ]       |[ ]       |0         |
+|p_comme FK|INT       |10        |[x]       |[x]       |[ ]       |0         |
+|commimg FK|INT       |10        |[x]       |[x]       |[ ]       |0         |
 
-#### work_episode
+#### commentImages
 |Rows      |Type      |Length    |Unsigned  |Allow Null|Zerofill  |Default   |
 |---       |---       |---       |---       |---       |---       |---       |
 |ep_id FK  |INT       |10        |[x]       |[ ]       |[ ]       |0         |
 |work_id FK|INT       |10        |[x]       |[ ]       |[ ]       |0         |
 
-#### work_category
+#### work_episodes
+|Rows      |Type      |Length    |Unsigned  |Allow Null|Zerofill  |Default   |
+|---       |---       |---       |---       |---       |---       |---       |
+|ep_id FK  |INT       |10        |[x]       |[ ]       |[ ]       |0         |
+|work_id FK|INT       |10        |[x]       |[ ]       |[ ]       |0         |
+
+#### work_categories
 |Rows      |Type      |Length    |Unsigned  |Allow Null|Zerofill  |Default   |
 |---       |---       |---       |---       |---       |---       |---       |
 |cat_id FK |INT       |10        |[x]       |[ ]       |[ ]       |0         |
