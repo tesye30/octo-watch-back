@@ -9,5 +9,6 @@ routes.get("/", (req, res) => {
 
 routes.get('/user', UserController.FindUserById);
 routes.post('/user', UserController.CreateNewUser);
+routes.delete('/user', UserController.DeleteUser);
 
 module.exports = routes;
