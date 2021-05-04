@@ -7,6 +7,7 @@ routes.get("/", (req, res) => {
   res.json({});
 });
 
+routes.get('/user', UserController.FindUserById);
 routes.post('/user', UserController.CreateNewUser);
 
 module.exports = routes;

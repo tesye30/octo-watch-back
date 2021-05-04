@@ -19,7 +19,7 @@ describe("CRUD de usuário", () => {
                       .get('/user')
                       .send(id)
       expect(res.statusCode).toEqual(200);
-      expect(res.body.name).toEqual("Main User");
+      expect(res.body.name).toEqual("Teste");
     }catch(err){
       fail(err);
     }
@@ -40,7 +40,7 @@ describe("CRUD de usuário", () => {
 
   test("Deve deletar um usuário com sucesso", async () => {
     try{
-      const id = await User.returnIdByEmail(mainUser.email);
+      const { id } = await User.returnIdByEmail(mainUser.email);
       const res = await request
                      .delete('/user')
                      .send(id);

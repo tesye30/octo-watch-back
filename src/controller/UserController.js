@@ -2,9 +2,25 @@ const User = require('../services/User');
 
 
 class UserController {
+  
+  async FindUserById(req, res){
+    try{
+      const id = req.body.id;
+      const user = await User.FindUserById(id);
+
+      if(user != undefined){
+        res.status(200).json(user);
+      }else{
+        res.status(400).json({ message: "Informação inválida." });
+      }
+    }catch(err){
+      console.log(err);
+    }
+  }
+
   async CreateNewUser(req, res){
     try{
-      const{ name, email, password } = req.body;
+      const { name, email, password } = req.body;
       // Fazer validations
       const result = await User.CreateNewUser(name, email, password);
       if(result.status){
