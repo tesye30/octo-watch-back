@@ -9,6 +9,27 @@ const mainUser = {
   password: '123'
 }
 
+beforeAll(async () => {
+  try{
+    await request
+      .post('/user')
+      .send(mainUser)
+  }catch(err){
+    console.log(err);
+  }
+});
+
+afterAll(async () => {
+  try{
+    const id = await User.returnIdByEmail(mainUser.email);
+    await request
+          .delete('/user')
+          .send(id);
+  }catch(err){
+    console.log(err);
+  }
+});
+
 describe("CRUD de usuário", () => {
 
   test("Deve retornar um usuário", async () => {
@@ -20,32 +41,6 @@ describe("CRUD de usuário", () => {
                       .send(id)
       expect(res.statusCode).toEqual(200);
       expect(res.body.name).toEqual("Main User");
-    }catch(err){
-      fail(err);
-    }
-  });
-
-  test("Deve cadastrar um usuário com sucesso", async () => {
-    try{
-      const res = await request
-                      .post('/user')
-                      .send(mainUser);
-      expect(res.statusCode).toEqual(200);
-      expect(res.body.message).toEqual("Usuário criado com sucesso.");
-      // done();
-    }catch(err){
-      fail(err);
-    }
-  });
-
-  test("Deve deletar um usuário com sucesso", async () => {
-    try{
-      const id = await User.returnIdByEmail(mainUser.email);
-      const res = await request
-                     .delete('/user')
-                     .send(id);
-      expect(res.statusCode).toEqual(200);
-      expect(res.body.message).toEqual("Usuário deletado com sucesso.");
     }catch(err){
       fail(err);
     }
