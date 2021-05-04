@@ -10,4 +10,4 @@ test("A aplicação deve rodar na porta 3000", async (done) => {
   }catch(err){
     fail(err);
   }
-})
+});

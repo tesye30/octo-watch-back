@@ -4,7 +4,7 @@
   "description": "## Faze de construção... ## 📕 Sumário [1. O que é?](https://github.com/tesye30/octo-watch#1--o-que-%C3%A9) [2. Como contribuir](https://github.com/tesye30/octo-watch#2-como-contribuir) [3. Legenda](https://github.com/tesye30/octo-watch#3--leganda) [4. Implementações](https://github.com/tesye30/octo-watch#4--implementa%C3%A7%C3%B5es) [5. Tecnologias](https://github.com/tesye30/octo-watch#5--tecnologias) [6. Documentação](https://github.com/tesye30/octo-watch#6--documenta%C3%A7%C3%A3o) [7. Owners](https://github.com/tesye30/octo-watch#7--owners)",
   "main": "index.js",
   "scripts": {
-    "test": "jest --detectOpenHandles",
+    "test": "jest",
     "dev": "nodemon src/server.js"
   },
   "repository": {
