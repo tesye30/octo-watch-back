@@ -2,6 +2,7 @@ const knex = require('../database/connection');
 const bcrypt = require('bcrypt');
 
 class User {
+
   async CreateNewUser(name, email, password){
     try{
       const newPassword = password.toString();

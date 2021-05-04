@@ -9,7 +9,22 @@ const mainUser = {
   password: '123'
 }
 
-describe("Cadastro de usuário", () => {
+describe("CRUD de usuário", () => {
+
+  test("Deve retornar um usuário", async () => {
+    try{
+      const id = await User.returnIdByEmail(mainUser.email);
+
+      const res = await request
+                      .get('/user')
+                      .send(id)
+      expect(res.statusCode).toEqual(200);
+      expect(res.body.name).toEqual("Main User");
+    }catch(err){
+      fail(err);
+    }
+  });
+
   test("Deve cadastrar um usuário com sucesso", async () => {
     try{
       const res = await request
