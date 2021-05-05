@@ -51,12 +51,12 @@ Uma rede social simples que permitirá comentários e avaliações animes/mangá
 
 ## 4. ✅ Implementações
 - [ ] CRUD User
-    - [ ] Find By Id (Admin - GET);
+    - [x] Find By Id (Admin - GET);
     - [ ] Find By Name (GET);
-    - [ ] Create (POST);
+    - [x] Create (POST);
     - [ ] Login (POST);
     - [ ] Update (PUT);
-    - [ ] Delte (DELETE);
+    - [x] Delte (DELETE);
     - [ ] Logout (Estudar...).
 
 - [ ] CRUD Works
@@ -117,6 +117,16 @@ Uma rede social simples que permitirá comentários e avaliações animes/mangá
 
 - [x] DB
     - MySQL
+- [ ] Testes
+    - [ ] Testes de usuers
+    - [ ] Testes de works
+    - [ ] Testes Studios
+    - [ ] Testes episodes
+    - [ ] Testes categories
+    - [ ] Testes comments
+    - [ ] Testes works_categories
+    - [ ] Testes works_studios
+
     
 ## 5. 💻 Tecnologias
 * Jest (TDD);

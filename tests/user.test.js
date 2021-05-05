@@ -51,6 +51,7 @@ describe("CRUD de usuário", () => {
       const res = await request
                     .get(`/users/?search=${mainUser.name}`);
       expect(res.statusCode).toEqual(200);
+      expect(res.body).toBeDefined();
     }catch(err){
       fail(err);
     }

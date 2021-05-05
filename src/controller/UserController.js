@@ -18,6 +18,21 @@ class UserController {
     }
   }
 
+  async FindUsersByName(req, res){
+    try{
+      const name = req.query.search;
+      const users = await User.FindUsersByName(name);
+
+      if(users != undefined){
+        res.status(200).json(users);
+      }else{
+        res.status(404).json({ message: "Nenhum usuário com esse nome foi encontrado." })
+      }
+    }catch(err){
+      console.log(err);
+    }
+  }
+
   async CreateNewUser(req, res){
     try{
       const { name, email, password } = req.body;

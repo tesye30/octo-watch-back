@@ -8,6 +8,7 @@ routes.get("/", (req, res) => {
 });
 
 routes.get('/user', UserController.FindUserById);
+routes.get('/users/', UserController.FindUsersByName);
 routes.post('/user', UserController.CreateNewUser);
 routes.delete('/user', UserController.DeleteUser);
 

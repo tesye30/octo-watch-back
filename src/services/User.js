@@ -6,7 +6,7 @@ class User {
   async FindUserById(id){
     try{
       const user = await knex
-                          .select(["id", "name", "email", "password"])
+                          .select(["id", "name", "email", "role"])
                           .where({ id: id })
                           .table("users");
       if(user != undefined){
@@ -17,6 +17,25 @@ class User {
     }catch(err){
       console.log(err);
       return [];
+    }
+  }
+
+  async FindUsersByName(name){
+    try{
+      const users = await knex
+                          .select(["name", "email", "role"])
+                          .where('name', 'like', `%${name}%`)
+                          .table("users");
+      if(users.length > 1){
+        return users;
+      }else if(users.length == 1){
+        return users[0];
+      }else{
+        return undefined
+      }
+    }catch(err){
+      console.log(err);
+      return { err: err, users: [] };
     }
   }
 
