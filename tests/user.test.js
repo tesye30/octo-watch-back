@@ -45,4 +45,14 @@ describe("CRUD de usuário", () => {
       fail(err);
     }
   });
+
+  test("Deve retornar usuários que contenham um nome pasado", async () => {
+    try{
+      const res = await request
+                    .get(`/users/?search=${mainUser.name}`);
+      expect(res.statusCode).toEqual(200);
+    }catch(err){
+      fail(err);
+    }
+  });
 });
