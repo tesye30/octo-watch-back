@@ -56,4 +56,17 @@ describe("CRUD de usuário", () => {
       fail(err);
     }
   });
+
+  test("Deve editar um usuário com sucesso", async () => {
+    try{
+      const id = User.returnIdByEmail(mainUser.email);
+      const res = await request
+                          .put(`user/${id}`)
+                          .send({ name: "Teste" });
+      expect(res.statusCode).toEqual(200);
+      expect(res.body.message).toEqual("As informações do usuário foram alteradas com sucesso.");
+    }catch(err){
+      fail(err)
+    }
+  });
 });

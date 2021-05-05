@@ -52,7 +52,7 @@ Uma rede social simples que permitirá comentários e avaliações animes/mangá
 ## 4. ✅ Implementações
 - [ ] CRUD User
     - [x] Find By Id (Admin - GET);
-    - [ ] Find By Name (GET);
+    - [x] Find By Name (GET);
     - [x] Create (POST);
     - [ ] Login (POST);
     - [ ] Update (PUT);
