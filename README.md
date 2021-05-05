@@ -55,7 +55,7 @@ Uma rede social simples que permitirá comentários e avaliações animes/mangá
     - [x] Find By Name (GET);
     - [x] Create (POST);
     - [ ] Login (POST);
-    - [ ] Update (PUT);
+    - [x] Update (PUT);
     - [x] Delte (DELETE);
     - [ ] Logout (Estudar...).
 
