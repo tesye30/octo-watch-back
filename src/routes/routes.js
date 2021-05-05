@@ -11,5 +11,6 @@ routes.get('/user', UserController.FindUserById);
 routes.get('/users/', UserController.FindUsersByName);
 routes.post('/user', UserController.CreateNewUser);
 routes.delete('/user', UserController.DeleteUser);
+routes.put('/user/:id', UserController.UpdateUserById);
 
 module.exports = routes;

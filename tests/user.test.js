@@ -59,10 +59,10 @@ describe("CRUD de usuário", () => {
 
   test("Deve editar um usuário com sucesso", async () => {
     try{
-      const id = User.returnIdByEmail(mainUser.email);
+      const id = await User.returnIdByEmail(mainUser.email);
       const res = await request
-                          .put(`user/${id}`)
-                          .send({ name: "Teste" });
+                          .put(`/user/${id.id}`)
+                          .send({ name: "Teste", email: "exemplo@exemplo.com" });
       expect(res.statusCode).toEqual(200);
       expect(res.body.message).toEqual("As informações do usuário foram alteradas com sucesso.");
     }catch(err){

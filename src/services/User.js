@@ -74,6 +74,21 @@ class User {
       return { status: false, err: err };
     }
   }
+
+  // Sera editada ainda, apenas para ver se valida o test
+  async UpdateUserById(id, name, email){
+    try{
+      await knex
+              .update({ name, email })
+              .where({ id: id })
+              .table("users");
+
+      return { status: true };
+    }catch(err){
+      console.log(err);
+      return { status: false, message: err };
+    }
+  }
 }
 
 module.exports = new User();

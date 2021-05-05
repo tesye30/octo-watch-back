@@ -61,6 +61,23 @@ class UserController {
       console.log(err);
     }
   }
+
+  async UpdateUserById(req, res){
+    try{
+      const id = req.params.id;
+      const { name, email } = req.body;
+      const result  = await User.UpdateUserById(id, name, email);
+
+      if(result.status){
+        res.status(200).json({ message: "As informações do usuário foram alteradas com sucesso." });
+      }else{
+        res.status(406).json({ message: result.err });
+      }
+
+    }catch(err){
+      console.log(err);
+    }
+  }
 }
 
 module.exports = new UserController();
