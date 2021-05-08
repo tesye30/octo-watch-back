@@ -83,4 +83,15 @@ describe("Login/Logout de usuário", () => {
       fail(err);
     }
   });
+
+  test("Deve fazer o logout do usuário", async () => {
+    try{
+      const res = await request
+                          .get('/logout')
+      expect(res.body.token).toBeNull();
+      expect(res.statusCode).toEqual(200);
+    }catch(err){
+      fail(err);
+    }
+  });
 });
