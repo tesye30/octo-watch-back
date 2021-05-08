@@ -89,7 +89,7 @@ class UserController {
       const pass = bcrypt.compare(password, user.password);
 
       if(pass){
-        const token = jwt.sign({ id: user.id, name: user.name, role: user.role, isLogged: true }, process.env.TOKEN_SECRET, {
+        const token = jwt.sign({ id: user.id, name: user.name, role: user.role }, process.env.TOKEN_SECRET, {
           expiresIn: '7d'
         });
 
@@ -100,6 +100,10 @@ class UserController {
     }else{
       res.status(406).json({ message: "Usuário não existe." });
     }
+  }
+
+  async Logout(req, res){
+    res.status(200).json({ token: null });
   }
 }
 

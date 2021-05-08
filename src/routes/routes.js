@@ -9,6 +9,7 @@ routes.get("/", (req, res) => {
 
 routes.get('/user', UserController.FindUserById);
 routes.get('/users/', UserController.FindUsersByName);
+routes.get('/logout', UserController.Logout);
 routes.post('/user', UserController.CreateNewUser);
 routes.post('/login', UserController.Login);
 routes.delete('/user', UserController.DeleteUser);
