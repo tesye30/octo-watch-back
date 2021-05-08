@@ -52,7 +52,12 @@ class UserController {
 
       if(isEmpty(password)){
         res.status(406).json({ message: "Informaões inválidas." });
-        return;
+        return; 
+      }
+      
+      if(isEmail(email)){
+        res.status(406).json({ message: "Informaões inválidas." });
+        return; 
       }
       
       const result = await User.CreateNewUser(name, email, password);
@@ -83,7 +88,7 @@ class UserController {
   async UpdateUserById(req, res){
     try{
       const id = req.params.id;
-      const { name, email, password } = req.body;
+      const { name, email } = req.body;
       const result  = await User.UpdateUserById(id, name, email, password);
 
       if(result.status){

@@ -1,5 +1,6 @@
 const knex = require('../database/connection');
 const bcrypt = require('bcrypt');
+const { isEmpty, isEmail } = require('validator');
 
 class User {
 
@@ -77,17 +78,37 @@ class User {
 
   // Sera editada ainda, apenas para ver se valida o test
   async UpdateUserById(id, name, email){
-    try{
-      await knex
-              .update({ name, email })
-              .where({ id: id })
-              .table("users");
+    const user = this.FindUserById(id);
+    
 
-      return { status: true };
-    }catch(err){
-      console.log(err);
-      return { status: false, message: err };
+    if(user != undefined){
+      if(email != undefined){
+        const result = await this.findByEmail(email);
+        if(!result){
+            edit.email = email;
+        }else{
+            return { status: false, err: "E-mail já cadastrado" };
+        }
+      }
+
+      if(!isEmpty(name)){
+          edit.name = name;   
+      }
+
+      try{
+        await knex
+                .update({ name, email })
+                .where({ id: id })
+                .table("users");
+  
+        return { status: true };
+      }catch(err){
+        console.log(err);
+        return { status: false, message: err };
+      }
     }
+    
+
   }
 
   async FindUserByEmail(email){
