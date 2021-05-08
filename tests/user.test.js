@@ -87,9 +87,22 @@ describe("Login/Logout de usuário", () => {
   test("Deve fazer o logout do usuário", async () => {
     try{
       const res = await request
-                          .get('/logout')
+                          .get('/logout');
       expect(res.body.token).toBeNull();
       expect(res.statusCode).toEqual(200);
+    }catch(err){
+      fail(err);
+    }
+  });
+});
+
+describe("Garante a validação dos dados nas rotas", () => {
+  test("Deve verificar se todos os campos foram preenchidos", async () => {
+    try{
+      const res = await request
+                          .post('/user')
+                          .send({ email: '', name: '', password: '' });
+      expect(res.statusCode).toEqual(406);
     }catch(err){
       fail(err);
     }
