@@ -70,3 +70,17 @@ describe("CRUD de usuário", () => {
     }
   });
 });
+
+describe("Login/Logout de usuário", () => {
+  test("Deve fazer o login do usuário", async () => {
+    try{
+      const res = await request
+                          .post('/login')
+                          .send({ email: mainUser.email, password: mainUser.password  });
+      expect(res.body.token).toBeDefined();
+      expect(res.statusCode).toEqual(200);
+    }catch(err){
+      fail(err);
+    }
+  });
+});

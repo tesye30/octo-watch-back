@@ -1,5 +1,6 @@
+require('dotenv-safe').config();
 const User = require('../services/User');
-
+const jwt = require('jsonwebtoken');
 
 class UserController {
   
