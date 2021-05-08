@@ -2,6 +2,7 @@ require('dotenv-safe').config();
 const User = require('../services/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
+const { isEmpty } = require('validator');
 
 class UserController {
   
@@ -38,7 +39,22 @@ class UserController {
   async CreateNewUser(req, res){
     try{
       const { name, email, password } = req.body;
-      // Fazer validations
+
+      if(isEmpty(name)){
+        res.status(406).json({ message: "Informaões inválidas." });
+        return;
+      }
+
+      if(isEmpty(email)){
+        res.status(406).json({ message: "Informaões inválidas." });
+        return;
+      }
+
+      if(isEmpty(password)){
+        res.status(406).json({ message: "Informaões inválidas." });
+        return;
+      }
+      
       const result = await User.CreateNewUser(name, email, password);
       if(result.status){
         res.status(200).json({ message: "Usuário criado com sucesso." });
@@ -67,8 +83,8 @@ class UserController {
   async UpdateUserById(req, res){
     try{
       const id = req.params.id;
-      const { name, email } = req.body;
-      const result  = await User.UpdateUserById(id, name, email);
+      const { name, email, password } = req.body;
+      const result  = await User.UpdateUserById(id, name, email, password);
 
       if(result.status){
         res.status(200).json({ message: "As informações do usuário foram alteradas com sucesso." });
