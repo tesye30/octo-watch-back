@@ -1,6 +1,7 @@
 require('dotenv-safe').config();
 const User = require('../services/User');
 const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
 
 class UserController {
   
@@ -77,6 +78,27 @@ class UserController {
 
     }catch(err){
       console.log(err);
+    }
+  }
+
+  async Login(req, res){
+    const { email, password } = req.body;
+
+    const user = await User.FindUserByEmail(email);
+    if(user != undefined){
+      const pass = bcrypt.compare(password, user.password);
+
+      if(pass){
+        const token = jwt.sign({ id: user.id, name: user.name, role: user.role, isLogged: true }, process.env.TOKEN_SECRET, {
+          expiresIn: '7d'
+        });
+
+        res.status(200).json({ token });
+      }else{
+        res.status(406).json({ message: "Senha incorreta." });
+      }
+    }else{
+      res.status(406).json({ message: "Usuário não existe." });
     }
   }
 }

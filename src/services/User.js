@@ -89,6 +89,23 @@ class User {
       return { status: false, message: err };
     }
   }
+
+  async FindUserByEmail(email){
+    try{
+      const user = await knex
+                      .select(["id", "name", "password", "role"])
+                      .where({ email: email  })
+                      .table("users");
+      if(user != undefined){
+        return user[0];
+      }else{
+        return undefined;
+      }
+    }catch(err){
+      console.log(err);
+      return { user: [], err: err };
+    }
+  }
 }
 
 module.exports = new User();
