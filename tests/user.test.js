@@ -70,3 +70,41 @@ describe("CRUD de usuário", () => {
     }
   });
 });
+
+describe("Login/Logout de usuário", () => {
+  test("Deve fazer o login do usuário", async () => {
+    try{
+      const res = await request
+                          .post('/login')
+                          .send({ email: mainUser.email, password: mainUser.password  });
+      expect(res.body.token).toBeDefined();
+      expect(res.statusCode).toEqual(200);
+    }catch(err){
+      fail(err);
+    }
+  });
+
+  test("Deve fazer o logout do usuário", async () => {
+    try{
+      const res = await request
+                          .get('/logout');
+      expect(res.body.token).toBeNull();
+      expect(res.statusCode).toEqual(200);
+    }catch(err){
+      fail(err);
+    }
+  });
+});
+
+describe("Garante a validação dos dados nas rotas", () => {
+  test("Deve verificar se todos os campos foram preenchidos", async () => {
+    try{
+      const res = await request
+                          .post('/user')
+                          .send({ email: '', name: '', password: '' });
+      expect(res.statusCode).toEqual(406);
+    }catch(err){
+      fail(err);
+    }
+  });
+});
